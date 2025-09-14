@@ -1,0 +1,56 @@
+name: Frontend CI/CD (React)
+
+on:
+  push:
+    branches:
+      - main   # Trigger on push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # 3️⃣ Install dependencies and build React
+      - name: Build React App
+        run: |
+          npm install
+          npm run build
+        working-directory: ./Frontend  # adjust if frontend is in a subfolder
+
+      # 4️⃣ Docker Login
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 5️⃣ Build Docker image
+      - name: Build Docker Image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest ./Frontend
+
+      # 6️⃣ Push Docker image to Docker Hub
+      - name: Push Docker Image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
+
+      # 7️⃣ Deploy on EC2
+      - name: Deploy Frontend on EC2
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
+            docker stop devflow-f || true
+            docker rm devflow-f || true
+            docker run -d -p 80:80 --name devflow-f ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
