@@ -25,7 +25,7 @@ const InputBox = ({ title, fields, buttonText, onSubmit, belowMessage, redirectT
             <p className='text-white/80'>Welcome Back!</p>
             {
                 fields.map((field: any, index: any) => (
-                    <div>
+                    <div key={index} className='flex flex-col mt-4'>
                         <p className='mt-4'>{field}</p>
                         <input
                             key={index}

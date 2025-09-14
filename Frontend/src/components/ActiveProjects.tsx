@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Plus, Users  } from 'lucide-react'
 const ActiveProjects = () => {
   return (
