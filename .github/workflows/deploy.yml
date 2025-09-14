@@ -25,7 +25,7 @@ jobs:
         run: |
           npm install
           npm run build
-        working-directory: ./frontend  # adjust if frontend is in a subfolder
+        working-directory: ./Frontend  # adjust if frontend is in a subfolder
 
       # 4️⃣ Docker Login
       - name: Docker Login
@@ -36,7 +36,7 @@ jobs:
 
       # 5️⃣ Build Docker image
       - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest ./frontend
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest ./Frontend
 
       # 6️⃣ Push Docker image to Docker Hub
       - name: Push Docker Image
