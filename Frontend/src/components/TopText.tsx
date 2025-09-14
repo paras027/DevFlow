@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const TopText = ({heading,subHeading,headingcolor, subHeadingColor}:any) => {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type CustomCheckboxProps = {
   label?: string; // Optional label for the checkbox

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { X, Calendar, Tag, AlertCircle, FileText } from 'lucide-react';
+import { X, Tag, AlertCircle, FileText } from 'lucide-react';
 
 interface AddTaskModalProps {
   onClose: () => void;

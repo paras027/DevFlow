@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { Plus, Users, Trash2 } from 'lucide-react'
-import CustomCheckbox from './CustomCheckbox';
+
 
 type Props = {
   namess: string;

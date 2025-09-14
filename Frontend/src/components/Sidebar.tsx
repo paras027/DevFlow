@@ -1,7 +1,7 @@
-import React from 'react'
+
 import { Sparkles } from 'lucide-react'
-import NavigationCards from './NavigationCards'
-import { FolderCode, Calendar, CircleCheck, House, Plus } from 'lucide-react'
+
+import {  Plus } from 'lucide-react'
 import SideBox from './SideBox'
 import { useState, useEffect } from 'react'
 import axios from 'axios'

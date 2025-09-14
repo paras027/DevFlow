@@ -1,4 +1,4 @@
-import React,{useMemo} from 'react'
+import {useMemo} from 'react'
 import { CheckCircle } from 'lucide-react'
 const gradients = [
     'from-pink-500 to-yellow-500',

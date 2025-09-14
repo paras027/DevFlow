@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const NavigationCards = ({icon:Icon,iconName}:any) => {
   return (

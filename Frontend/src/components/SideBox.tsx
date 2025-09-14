@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import  { useMemo } from 'react'
 import { Zap, ChevronRight } from 'lucide-react'
-import { FolderCode  ,Calendar , CircleCheck,House,Plus   } from 'lucide-react'
+
 
 const gradients = [
     'from-pink-500 to-yellow-500',

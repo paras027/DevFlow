@@ -1,10 +1,10 @@
-import React,{useState, useEffect}  from 'react'
+import {useState, useEffect}  from 'react'
 import TopText from '../components/TopText'
 import AddTask from '../components/AddTask'
-import { Plus, Calendar,MoveUpRight  } from 'lucide-react'
+import { Plus,MoveUpRight  } from 'lucide-react'
 import DetailBox from '../components/DetailBox'
 import WorkSpacesCard from '../components/WorkSpacesCard'
-import ActiveProjects from '../components/ActiveProjects'
+
 import DeleteBox from '../components/DeleteBox'
 import axios from 'axios'
 import AddProjectPop from '../components/AddProjectPop.tsx'

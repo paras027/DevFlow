@@ -1,7 +1,7 @@
-import React from 'react'
+
 import { Zap } from 'lucide-react'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { savePassword, saveUsername } from '../redux/Slices/AuthSlice'
 
 

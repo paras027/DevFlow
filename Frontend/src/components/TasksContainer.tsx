@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useDrop } from 'react-dnd';
-import { Plus,Trash2  } from 'lucide-react';
+import { Plus  } from 'lucide-react';
 import TaskBox from './TaskBox';
 import AddTaskPop from './AddTaskPop';
 

@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import { LoginPage } from './Pages/LoginPage'
 import SignupPage from './Pages/SignupPage'
@@ -20,8 +18,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/workspace" element={<WorkSpace />} />
+          <Route index element={<ProjectsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
         </Route>
