@@ -14,9 +14,9 @@ DevFlow is a full-stack project management application built with React.js and S
 
 📊 Scalable Backend – REST APIs with Spring Boot + JPA/Hibernate
 
-🗄️ Database – PostgreSQL with optimized schema and queries
+🗄️ Database – PostgreSQL with optimized schema and queries  
 
-Backend  github URL - https://github.com/paras027/task.management
+Backend  github URL - https://github.com/paras027/task.management  
 
 🛠️ Tech Stack
 
