@@ -15,7 +15,7 @@ export function LoginPage({ setToken }: { setToken: (t: string) => void }) {
   async function Login() {
 
 
-    const data = axios.post('http://13.48.26.60:8080/users/login', {
+    const data = axios.post('http://13.49.57.230:8080/users/login', {
       username: username,
       password: password
     },

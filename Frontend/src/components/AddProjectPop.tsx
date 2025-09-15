@@ -9,7 +9,7 @@ function AddProjectPop({ onClose, onTaskAdded }:any) {
     e.preventDefault();
     try {
           const response = await axios.post(
-        'http://13.48.26.60:8080/project/addProjects',
+        'http://13.49.57.230:8080/project/addProjects',
         { projectName, projectDescription },
         {
           withCredentials: true,

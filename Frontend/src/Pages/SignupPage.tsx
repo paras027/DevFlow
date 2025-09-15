@@ -14,7 +14,7 @@ const SignupPage = () => {
  async function Login(){
 
 
-  const data = axios.post('http://13.48.26.60:8080/users/signup', {
+  const data = axios.post('http://13.49.57.230:8080/users/signup', {
     username: username,
     password: password
   })
