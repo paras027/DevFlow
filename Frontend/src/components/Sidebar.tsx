@@ -14,7 +14,7 @@ const Sidebar = () => {
     
     async function fetchProjects() {
         // Fetch projects from backend
-        const project = await axios.get('http://localhost:8080/project/getProjectbyName', {
+        const project = await axios.get('http://13.48.26.60:8080/project/getProjectbyName', {
             withCredentials: true
         });
 

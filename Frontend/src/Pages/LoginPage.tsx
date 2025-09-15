@@ -5,15 +5,17 @@ import {  useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 
-export const LoginPage = () => {
+export function LoginPage({ setToken }: { setToken: (t: string) => void }) {
 
   const username = useSelector((state: any) => state.auth.username);
   const password = useSelector((state: any) => state.auth.password);
   const navigate = useNavigate();
+
+
   async function Login() {
 
 
-    const data = axios.post('http://localhost:8080/users/login', {
+    const data = axios.post('http://13.48.26.60:8080/users/login', {
       username: username,
       password: password
     },
@@ -22,6 +24,7 @@ export const LoginPage = () => {
       })
       .then((response) => {
         console.log(response);
+        setToken(response.data);
         navigate('/');
       })
       .catch((error) => {

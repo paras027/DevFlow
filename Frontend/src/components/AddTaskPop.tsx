@@ -33,7 +33,7 @@ const AddTaskPop: React.FC<AddTaskModalProps> = ({
       };
 
       const response = await axios.post(
-        `http://localhost:8080/tasks/addTasks/${projectId}`,
+        `http://13.48.26.60:8080/tasks/addTasks/${projectId}`,
         newTask,
         { withCredentials: true }
       );

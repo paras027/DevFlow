@@ -74,7 +74,7 @@ useEffect(() => {
   const fetchTasks = async () => {
     try {
       console.log('Fetching tasks for project:', id);
-      const response = await axios.get(`http://localhost:8080/tasks/getTasksbyProject/${id}`, {
+      const response = await axios.get(`http://13.48.26.60:8080/tasks/getTasksbyProject/${id}`, {
         withCredentials: true
       });
       
@@ -148,7 +148,7 @@ useEffect(() => {
 
   const updateTaskStatus = async (taskId: string, newStatus: string) => {
     try {
-      await axios.put(`http://localhost:8080/tasks/${taskId}/status`, 
+      await axios.put(`http://13.48.26.60:8080/tasks/${taskId}/status`, 
         { status: newStatus },
         { withCredentials: true }
       );
@@ -184,7 +184,7 @@ useEffect(() => {
  // delete task handler
 const deleteTask = async (taskId: string, columnName: string) => {
   try {
-    await axios.delete(`http://localhost:8080/tasks/deleteTasks/${taskId}`, {
+    await axios.delete(`http://13.48.26.60:8080/tasks/deleteTasks/${taskId}`, {
       withCredentials: true,
     });
 
