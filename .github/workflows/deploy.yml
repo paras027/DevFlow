@@ -53,4 +53,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
             docker stop devflow-f || true
             docker rm devflow-f || true
-            docker run -d -p 80:5173 --name devflow-f ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
+            docker run -d -p 80:80 --name devflow-f ${{ secrets.DOCKER_USERNAME }}/devflow-f:latest
