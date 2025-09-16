@@ -120,26 +120,10 @@ import { useNavigate } from 'react-router-dom'
 
 const ProjectsPage = () => {
   const navigate = useNavigate();
-  // var [projectData, setProjectData] = useState([]);
+  var [projectData, setProjectData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [tasks, setTasks] = useState([]);
-const projectData = [{
-    "id": "1",
-    "projectName": "Project Alpha",
-    "projectDescription": "This is the first project.",
-  "createdAt": "2023-10-01T10:00:00Z"
-  }, {
-    "id": "2",
-    "projectName": "Project Beta",
-    "projectDescription": "This is the second project.",
-  "createdAt": "2023-10-05T14:30:00Z"
-  }, {
-    "id": "3",
-    "projectName": "Project Gamma",
-    "projectDescription": "This is the third project.",
-  "createdAt": "2023-10-10T09:15:00Z"
-    
-  }]
+
   function changeModal() {
     setShowModal(true);
   }
@@ -152,7 +136,7 @@ const projectData = [{
     const project = await axios.get('http://13.49.57.230:8080/project/getProjectbyName', {
       withCredentials: true
     });
-    // setProjectData(project.data);
+    setProjectData(project.data);
     console.log("some data came: ", project);
   }
 
@@ -165,7 +149,7 @@ const projectData = [{
       await axios.delete(`http://13.49.57.230:8080/project/deleteProject/${id}`, {
         withCredentials: true,
       });
-      // setProjectData((prev: any) => prev.filter((p: any) => p.id !== id));
+      setProjectData((prev: any) => prev.filter((p: any) => p.id !== id));
     } catch (err) {
       console.error("Error deleting project:", err);
     }
@@ -176,24 +160,6 @@ const projectData = [{
   }
 
   const [edit, setEdit] = useState(false);
-  // const projectData = [{
-  //   "id": "1",
-  //   "projectName": "Project Alpha",
-  //   "projectDescription": "This is the first project.",
-  // "createdAt": "2023-10-01T10:00:00Z"
-  // }, {
-  //   "id": "2",
-  //   "projectName": "Project Beta",
-  //   "projectDescription": "This is the second project.",
-  // "createdAt": "2023-10-05T14:30:00Z"
-  // }, {
-  //   "id": "3",
-  //   "projectName": "Project Gamma",
-  //   "projectDescription": "This is the third project.",
-  // "createdAt": "2023-10-10T09:15:00Z"
-    
-  // }]
-
 
   return (
     <div className='bg-[#F2F3F4] min-h-screen overflow-y-auto'>
